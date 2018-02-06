@@ -5,11 +5,12 @@ const Schema  = mongoose.Schema;
 // Creating the user schema.
 const UserSchema = new Schema({
     name: String,
-    likedFlatsIds: Array,
-    bookedFlats: Array,
-    joinedAt: Number,
     email: String, 
     password: String,
+    joinedAt: Number,
+    likedFlatsIds: Array,
+    bookedFlats: Array,
+    bookedFlatsIds: Array,
 })
 
 // Create user collection.

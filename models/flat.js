@@ -10,9 +10,9 @@ const FlatSchema = new Schema({
     desc: String,
     prices: Object,
     country : String, 
-    userLikedIds: Array,
     transacs : Array,
     user: String,
+    userLikedIds: Array,
 });
 
 // Creating Flat collection.
