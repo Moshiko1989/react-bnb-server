@@ -22,8 +22,8 @@ mongoose.connect('mongodb://moshiko:9301306moshiko@ds125288.mlab.com:25288/react
 mongoose.Promise = global.Promise;
 
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'conection error'));
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'conection error'));
 
 
 /////////////////////// Middlewares ///////////////////////////////
