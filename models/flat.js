@@ -10,7 +10,7 @@ const FlatSchema = new Schema({
     desc: String,
     prices: Object,
     country : String, 
-    transacs : Array,
+    bookings : Array,
     user: String,
     userLikedIds: Array,
 });

@@ -9,8 +9,8 @@ const UserSchema = new Schema({
     password: String,
     joinedAt: Number,
     likedFlatsIds: Array,
-    bookedFlats: Array,
     bookedFlatsIds: Array,
+    bookings: Array,
 })
 
 // Create user collection.

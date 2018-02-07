@@ -3,7 +3,7 @@ const cl = console.log;
 const express = require('express');
 const router = express.Router();
 
-// // Access to the User collection.
+// Access to the User collection.
 const User = require('../models/user');
 
 // Adding new user to data base.
@@ -13,7 +13,6 @@ router.post('/user', function (req, res, next) {
     // User.find({name: req.body.name} || {emil: req.body.emaial}).then(do error)....
 
     User.create(req.body).then(function (user) {
-        // cl('user created: ', user);
         res.send(user);
     }).catch(next);
 });
@@ -25,18 +24,14 @@ router.put('/user/:id', function (req, res, next) {
     User.findByIdAndUpdate({ _id }, user).then(function() {
         User.findById(_id).then(function (user) {
             res.send(user);
-            // console.log('user: ', user);
         })
     })
 })
 
-// Load & Validat user from data base.
+// Load & Validate user from data base.
 router.get('/user/:name/:password', function (req, res, next) {
-    // cl('req.params.name: ', req.params.name);
-    // cl('req.params.passord: ', req.params.password);
     User.findOne({ name: req.params.name, password: req.params.password })
         .then(function (user) {
-            // cl('user: ', user);
             if (!user); // Inform client somehow...
             res.send(user);
         }).catch(next);

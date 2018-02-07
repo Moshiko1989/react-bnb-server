@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 // Set up Express app.
 app = express();
 // Conect to mongo db.
-// mongoose.connect('mongodb://localhost/airbnb');
 const options = {
     useMongoClient: true,
     autoIndex: false, // Don't build indexes
@@ -20,11 +19,6 @@ const options = {
   };
 mongoose.connect('mongodb://moshiko:9301306moshiko@ds125288.mlab.com:25288/react-bnb', options);
 mongoose.Promise = global.Promise;
-
-
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'conection error'));
-
 
 /////////////////////// Middlewares ///////////////////////////////
 
@@ -38,16 +32,14 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes :
-app.use('/api', require('./routes/FlatsApi'));
-app.use('/api', require('./routes/UserApi'));
-app.use('/api', require('./routes/TransacApi'));
+app.use(require('./routes/FlatsApi'));
+app.use(require('./routes/UserApi'));
+app.use(require('./routes/TransacApi'));
 
 // Error handling middleware.
 app.use(function (err, req, res, next) {
     res.status(422).send({ error: err.message })
 });
-
-
 
 //////////////////////// Listen /////////////////////////////////
 
