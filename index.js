@@ -12,7 +12,8 @@ const dev = app.get("env") !== "production";
 if (!dev) {
   app.use(express.static(path.resolve(__dirname, "build")));
   app.get("*", (req, res) => {
-      res.sendFile(__dirname, 'build', 'index.html');
+      // res.sendFile(__dirname, 'build', 'index.html');
+      res.sendFile(__dirname, 'build/index.html');
   });
 }
 
